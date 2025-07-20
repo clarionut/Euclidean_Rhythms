@@ -10,7 +10,7 @@ During analysis of the code I found several things which would compound these is
 - use of a relatively slow I2C OLED display. Swapped for an alternative using much faster hardware SPI
 - using a graphics library which keeps an in-memory copy of the display. Changed to the less memory-intensive U8glib library
 - the original code uses multiple loops over the channels, each processing a single aspect of the code. Restructured to carry out as many of these
-- operations as possible in a single loop
+operations as possible in a single loop
 - use of the Arduino digitalWrite() function (intrinsically very slow) to output the triggers. Replaced by direct port operations to update all trigger
 outputs much faster and simultaneously
 - the rotary encoder originally used both interrupt pins of the Arduino with simple polling of the clock input, potentially leading to short clock pulses
