@@ -27,8 +27,8 @@ The resulting code is smaller than the original allowing some extra functionalit
 with predefined default settings, but it would be easy to modify so that the stored settings are retrieved automatically at start up
 - a probability control by potentiometer or input CV to vary the likelyhood of changes in Random mode. As in Hagiwo's original code the allowed ranges
 of randomness are predefined in the code with the probability controls influencing how likely the changes are
-- option for a gate input to re-zero all the output channels to the starting position. I didn't implement this due to a lack of space on the Eurorack
-panel but the code for it is present.
+- option for a gate input to re-zero all the output channels to the starting position. I didn't implement this hardware due to a lack of space on my
+Eurorack panel but the code for it is present
 
 There are some more details of the changes in the Arduino code comments.
 
