@@ -30,7 +30,9 @@ of randomness are predefined in the code with the probability controls influenci
 - option for a gate input to re-zero all the output channels to the starting position. I didn't implement this hardware due to a lack of space on my
 Eurorack panel but the code for it is present
 
-There are some more details of the changes in the Arduino code comments.
+There are some more details of the changes in the Arduino code comments. The hardware is similar to the original but uses an Arduino Pro Mini rather than
+a Nano, has buffering on the outputs for protection and to give a higher voltage trigger output, and has additional circuitry for the probability input &
+manual step input.
 
 Please note that I built this module using stripboard rather than a PCB. The KiCad files and Gerbers are for my proposed PCB layout, but bear in mind that
 ***I have not built the circuit using these files***. Please check carefully to ensure you're happy with them before use!
