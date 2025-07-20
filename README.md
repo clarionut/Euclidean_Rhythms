@@ -4,7 +4,7 @@
 This repository contains details of my derivative of Hagiwo's Euclidean Rhythms synthesiser module (https://note.com/solder_state/n/n433b32ea6dbc).
 
 In his notes about the module, Hagiwo comments that there is considerable latency due to the OLED display and also mentions instability in the program
-possibly caused by memory issues. He partially addresses the latency issue by only updating the OLED on clock inputs, but this makes it impossible to
+possibly caused by memory issues. He partially addresses the latency issue by only updating the OLED on clock inputs, but this makes it difficult to
 update the settings in the absence of a clock input.
 During analysis of the code I found several things which would compound these issues, e.g.
 - use of a relatively slow I2C OLED display. Swapped for an alternative using much faster hardware SPI
