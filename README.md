@@ -7,11 +7,11 @@ In his notes about the module, Hagiwo comments that there is considerable latenc
 possibly caused by memory issues. He partially addresses the latency issue by only updating the OLED on clock inputs, but this makes it impossible to
 update the settings in the absence of a clock input.
 During analysis of the code I found several things which would compound these issues, e.g.
-- use of a I2C OLED display, swapped for an alternative using much faster hardware SPI
-- using a graphics library which keeps an in-memory copy of the display, changed to the less memory-intensive U8glib library
+- use of a relatively slow I2C OLED display. Swapped for an alternative using much faster hardware SPI
+- using a graphics library which keeps an in-memory copy of the display. Changed to the less memory-intensive U8glib library
 - the original code uses multiple loops over the channels, each processing a single aspect of the code. Restructured to carry out as many of these
 - operations as possible in a single loop
-- use of the Arduino digitalWrite() function (intrinsically very slow) to output the triggers, replaced by direct port operations to update all trigger
+- use of the Arduino digitalWrite() function (intrinsically very slow) to output the triggers. Replaced by direct port operations to update all trigger
 outputs much faster and simultaneously
 - the rotary encoder originally used both interrupt pins of the Arduino with simple polling of the clock input, potentially leading to short clock pulses
 being missed. The Encoder library can also be used in a single-interrupt mode allowing the clock input to use the other interrupt, with the interrupt
