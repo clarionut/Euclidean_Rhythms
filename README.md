@@ -33,4 +33,4 @@ Eurorack panel but the code for it is present
 There are some more details of the changes in the Arduino code comments.
 
 Please note that I built this module using stripboard rather than a PCB. The KiCad files and Gerbers are for my proposed PCB layout, but do note that
-*I have not built the circuit using these files*. Please check carefully to ensure you're happy with them before use!
+***I have not built the circuit using these files***. Please check carefully to ensure you're happy with them before use!
