@@ -19,7 +19,7 @@ service routine directly generating the trigger outputs
 
 These changes significantly improve the performance and allow the display to be updated on each clock and when the rotary encoder is used. The display
 update is still relatively slow even using hardware SPI resulting in long & variable length trigger outputs. Also the OLED is always on even if the
-module is not in use. I therefore added a screen-saver which blanks the OLED after 30 seconds plus LEDs to monitor the trigger outputs. The OLED is
+module is not in use. I therefore added a screensaver which blanks the OLED after 30 seconds plus LEDs to monitor the trigger outputs. The OLED is
 enabled again when the rotary encoder is used. This allows quite high clock speeds once the screensaver has kicked in.
 
 The resulting code is smaller than the original allowing some extra functionality to be added:
