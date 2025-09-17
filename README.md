@@ -1,7 +1,7 @@
 # Euclidean Rhythms
 ![EuclideanRhythmsSml](https://github.com/user-attachments/assets/ccd983dd-b1db-48ab-b2c8-7528f476d753)
 
-This repository contains details of my derivative of Hagiwo's Euclidean Rhythms synthesiser module (https://note.com/solder_state/n/n433b32ea6dbc).
+This repository contains details of my derivative of [Hagiwo's Euclidean Rhythms](https://note.com/solder_state/n/n433b32ea6dbc) synthesiser module.
 
 In his notes about the module, Hagiwo comments that there is considerable latency due to the OLED display and also mentions instability in the program
 possibly caused by memory issues. He partially addresses the latency issue by only updating the OLED on clock inputs, but this makes it difficult to
