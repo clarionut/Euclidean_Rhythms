@@ -36,6 +36,7 @@ manual step button.
 
 Please note that I built this module using stripboard rather than a PCB. The KiCad files and Gerbers have been used to build an [SPI version of Hagiwo's 6-channel trigger sequencer](https://github.com/clarionut/6-channel-trg-sequencer) so the PCB layout has now been verified apart from the probability CV input section.
 
-###Updates
+### Updates
 08/10/2025 - updated KiCad files (amended silk-screen labelling, minor header-pin changes)
+
            - added Arduino code using the faster Adafruit_SSD1306 library - RECOMMENDED
