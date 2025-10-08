@@ -8,7 +8,7 @@ possibly caused by memory issues. He partially addresses the latency issue by on
 update the settings in the absence of a clock input.
 During analysis of the code I found several things which would compound these issues, e.g.
 - use of a relatively slow I2C OLED display. Swapped for an alternative using much faster hardware SPI
-- using a graphics library which keeps an in-memory copy of the display. Changed to the less memory-intensive U8glib library
+- (using a graphics library which keeps an in-memory copy of the display. Changed to the less memory-intensive U8glib library). Subsequent testing has shown that code using the Adafruit_SSD1306 library runs roughly twice as fast as either u8glib or u8g2. I'd therefore recommend using the EuclideanRhythms_AF sketch. It's larger than the u8glib based code but has shown no signs of instability despite its greater functionality.
 - the original code uses multiple loops over the channels, each processing a single aspect of the code. Restructured to carry out as many of these
 operations as possible in a single loop
 - use of the Arduino digitalWrite() function (intrinsically very slow) to output the triggers. Replaced by direct port operations to update all trigger
@@ -22,7 +22,7 @@ update is still relatively slow even using hardware SPI resulting in long & vari
 module is not in use. I therefore added a screensaver which blanks the OLED after 30 seconds plus LEDs to monitor the trigger outputs. The OLED is
 enabled again when the rotary encoder is used. This allows quite high clock speeds once the screensaver has kicked in.
 
-The resulting code is smaller than the original allowing some extra functionality to be added:
+Some extra functionality has been added to the code:
 - ability to 'Put' the current settings into the Arduino EEPROM and 'Get' them from EEPROM in a subsequent session. This version of the code starts up
 with predefined default settings, but it would be easy to modify so that the stored settings are retrieved automatically at start up
 - a probability control by potentiometer or input CV to vary the likelyhood of changes in Random mode. As in Hagiwo's original code the allowed ranges
@@ -34,5 +34,4 @@ There are some more details of the changes in the Arduino code comments. The har
 a Nano, has buffering on the outputs for protection and to give higher voltage triggers, and has additional circuitry for the probability controls &
 manual step button.
 
-Please note that I built this module using stripboard rather than a PCB. The KiCad files and Gerbers are for my proposed PCB layout, but bear in mind that
-***I have not built the circuit using these files***. Please check carefully to ensure you're happy with them before use!
+Please note that I built this module using stripboard rather than a PCB. The KiCad files and Gerbers have been used to build an [SPI version of Hagiwo's 6-channel trigger sequencer](https://github.com/clarionut/6-channel-trg-sequencer) so the PCB layout has now been verified apart from the probability CV input section.
