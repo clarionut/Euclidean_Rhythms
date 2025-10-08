@@ -8,7 +8,7 @@ possibly caused by memory issues. He partially addresses the latency issue by on
 update the settings in the absence of a clock input.
 During analysis of the code I found several things which would compound these issues, e.g.
 - use of a relatively slow I2C OLED display. Swapped for an alternative using much faster hardware SPI
-- (using a graphics library which keeps an in-memory copy of the display. Changed to the less memory-intensive U8glib library). Subsequent testing has shown that code using the Adafruit_SSD1306 library runs roughly twice as fast as either u8glib or u8g2. I'd therefore recommend using the EuclideanRhythms_AF sketch. It's larger than the u8glib based code but has shown no signs of instability despite its greater functionality.
+- (using a graphics library which keeps an in-memory copy of the display. Changed to the less memory-intensive U8glib library). Subsequent testing has shown that code using the Adafruit_SSD1306 library runs roughly twice as fast as either u8glib or u8g2. I'd therefore recommend using the EuclideanRhythms_AF sketch. It's larger than the u8glib based code but has shown no signs of instability despite its greater functionality
 - the original code uses multiple loops over the channels, each processing a single aspect of the code. Restructured to carry out as many of these
 operations as possible in a single loop
 - use of the Arduino digitalWrite() function (intrinsically very slow) to output the triggers. Replaced by direct port operations to update all trigger
